@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de Maily - Estudiante de Ingeniería en Ciencias de la Computación en la UCSG. Desarrollo de software, redes y administración de sistemas." />
+  <title>Maily | Ingeniería en Ciencias de la Computación</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Navegación Principal -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a href="#inicio" class="nav__logo">Maily Franco Acurio </a>
+
+      <!-- Botón de cambio de modo -->
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+        <span class="theme-icon" id="theme-icon">☀️</span>
+      </button>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+     
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#inicio" class="nav__link active">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav__link">Sobre Mí</a></li>
+        <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
+        <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+        <li><a href="#certificados" class="nav__link">Certificados</a></li>
+        <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Hero con Terminal Interactiva -->
+    <section class="hero section" id="inicio">
+      <div class="container hero__grid">
+
+        <!-- Columna Izquierda: Presentación -->
+        <div class="hero__content reveal">
+          <div class="hero__status">
+            <span class="status-dot"></span>
+            <span>Estudiante de Ingeniería en Ciencias de la Computación</span>
+          </div>
+
+          <h1 class="hero__title">Hola, soy <span class="text-gradient">Maily Franco</span></h1>
+
+          <p class="hero__typewriter-line">
+            Enfocada en <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+          </p>
+
+          <p class="hero__subtitle">
+            Desarrollando soluciones eficientes mediante código limpio, automatización en entornos Linux, arquitectura de redes y bases de datos.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#proyectos" class="btn btn--primary">Explorar Proyectos</a>
+            <a href="#certificados" class="btn btn--outline">Ver Certificados PDF</a>
+          </div>
+
+          <div class="hero__social-bar">
+            <a href="https://github.com/Mai-416" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="mono-badge">GH</span> github.com/Mai-416
+            </a>
+            <a href="mailto:tifany.franco@cu.ucsg.edu.ec" class="social-pill">
+              <span class="mono-badge">@</span> tifany.franco@cu.ucsg.edu.ec
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Terminal Linux Interactiva -->
+        <div class="terminal reveal" id="terminal-box">
+          <div class="terminal__header">
+            <div class="terminal__buttons">
+              <span class="terminal__btn terminal__btn--close"></span>
+              <span class="terminal__btn terminal__btn--min"></span>
+              <span class="terminal__btn terminal__btn--max"></span>
+            </div>
+            <span class="terminal__title">maily@ucsg-wsl: ~ (bash)</span>
+          </div>
+
+          <div class="terminal__body" id="terminal-body">
+            <div class="terminal__output" id="terminal-output">
+              <p class="cmd-line"><span class="prompt">maily@ucsg:~$</span> ./bienvenida.sh</p>
+              <p class="cmd-response">¡Hola! Bienvenida/o a mi consola interactiva. Escribe un comando o haz clic en los botones de abajo:</p>
+            </div>
+
+            <div class="terminal__input-line">
+              <span class="prompt">maily@ucsg:~$</span>
+              <input type="text" id="terminal-input" class="terminal__input" placeholder="Escribe 'help' y presiona Enter..." autocomplete="off" spellcheck="false" aria-label="Entrada de comando de terminal" />
+            </div>
+          </div>
+
+          <div class="terminal__shortcuts">
+            <button type="button" class="cmd-chip" data-cmd="whoami">whoami</button>
+            <button type="button" class="cmd-chip" data-cmd="skills">skills</button>
+            <button type="button" class="cmd-chip" data-cmd="proyectos">proyectos</button>
+            <button type="button" class="cmd-chip" data-cmd="contacto">contacto</button>
+            <button type="button" class="cmd-chip" data-cmd="clear">clear</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Sobre Mí -->
+    <section class="about section" id="sobre-mi">
+      <div class="container reveal">
+        <h2 class="section__title">Sobre Mí</h2>
+        <div class="about__card spotlight-card">
+          <p class="about__text">
+            Soy estudiante de <strong>Ingeniería en Ciencias de la Computación</strong> en la <strong>Universidad Católica de Santiago de Guayaquil (UCSG)</strong> en Guayaquil, Ecuador. Mi perfil combina el desarrollo de software, el diseño y configuración de redes de computadoras y la administración de sistemas operativos, integrando scripts de automatización en Linux con la gestión estructurada de bases de datos.
+          </p>
+          <div class="about__highlights">
+            <div class="highlight-item">
+              <span class="highlight-item__value">UCSG</span>
+              <span class="highlight-item__label">Guayaquil, Ecuador</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-item__value">5+</span>
+              <span class="highlight-item__label">Lenguajes de Prog.</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-item__value">Linux & Redes</span>
+              <span class="highlight-item__label">Infraestructura & CLI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Habilidades -->
+    <section class="skills section" id="habilidades">
+      <div class="container">
+        <h2 class="section__title reveal">Habilidades Técnicas</h2>
+        <div class="skills__grid">
+
+          <!-- Lenguajes -->
+          <article class="skill-card spotlight-card reveal">
+            <div class="skill-card__header">
+              <span class="skill-card__icon" aria-hidden="true">&lt;/&gt;</span>
+              <h3 class="skill-card__title">Lenguajes</h3>
+            </div>
+            <div class="skill-card__tags">
+              <span class="tag">Java</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">C++</span>
+              <span class="tag">Bash</span>
+            </div>
+          </article>
+
+          <!-- Entornos y Redes -->
+          <article class="skill-card spotlight-card reveal">
+            <div class="skill-card__header">
+              <span class="skill-card__icon" aria-hidden="true">#_</span>
+              <h3 class="skill-card__title">Entornos y Redes</h3>
+            </div>
+            <div class="skill-card__tags">
+              <span class="tag">Linux (WSL)</span>
+              <span class="tag">Cisco CCNA</span>
+              <span class="tag">Packet Tracer</span>
+            </div>
+          </article>
+
+          <!-- Bases de Datos -->
+          <article class="skill-card spotlight-card reveal">
+            <div class="skill-card__header">
+              <span class="skill-card__icon" aria-hidden="true">SQL</span>
+              <h3 class="skill-card__title">Bases de Datos</h3>
+            </div>
+            <div class="skill-card__tags">
+              <span class="tag">Oracle SQL</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">PL/SQL</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Proyectos Técnicos -->
+    <section class="projects section" id="proyectos">
+      <div class="container">
+        <h2 class="section__title reveal">Proyectos Destacados</h2>
+        <div class="projects__grid">
+
+          <!-- Proyecto 1 -->
+          <article class="project-card spotlight-card reveal">
+            <div class="project-card__top">
+              <div class="project-card__meta">
+                <span class="project-card__type">Automatización & CLI</span>
+                <span class="project-card__badge">Bash</span>
+              </div>
+              <h3 class="project-card__title">Sistema.sh</h3>
+              <p class="project-card__description">
+                Script modular en Bash para automatización e información del sistema en entornos Linux (WSL), con interfaz interactiva por menús y diagnóstico de recursos.
+              </p>
+            </div>
+            <div class="project-card__footer">
+              <span class="tag tag--sm">Bash</span>
+              <span class="tag tag--sm">Linux WSL</span>
+              <span class="tag tag--sm">CLI</span>
+            </div>
+          </article>
+
+          <!-- Proyecto 2 -->
+          <article class="project-card spotlight-card reveal">
+            <div class="project-card__top">
+              <div class="project-card__meta">
+                <span class="project-card__type">Ciberseguridad & SO</span>
+                <span class="project-card__badge">Ubuntu</span>
+              </div>
+              <h3 class="project-card__title">Análisis de Seguridad</h3>
+              <p class="project-card__description">
+                Investigación técnica y presentación sobre la vulnerabilidad <strong>Januscape (CVE-2026-53359)</strong> en Ubuntu, detallando su alcance, impacto y mitigación.
+              </p>
+            </div>
+            <div class="project-card__footer">
+              <span class="tag tag--sm">CVE-2026-53359</span>
+              <span class="tag tag--sm">Ubuntu</span>
+              <span class="tag tag--sm">Seguridad</span>
+            </div>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="project-card spotlight-card reveal">
+            <div class="project-card__top">
+              <div class="project-card__meta">
+                <span class="project-card__type">Modelado Financiero</span>
+                <span class="project-card__badge">Datos</span>
+              </div>
+              <h3 class="project-card__title">Análisis Financiero</h3>
+              <p class="project-card__description">
+                Desarrollo de modelos estructurados de análisis DuPont y balances generales en Excel para evaluar indicadores de rentabilidad y desempeño operativo.
+              </p>
+            </div>
+            <div class="project-card__footer">
+              <span class="tag tag--sm">Excel</span>
+              <span class="tag tag--sm">Modelo DuPont</span>
+              <span class="tag tag--sm">Balances</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Certificados, Cursos y Charlas (PDFs) -->
+    <section class="certs section" id="certificados">
+      <div class="container">
+        <h2 class="section__title reveal">Cursos, Certificados y Charlas</h2>
+        <p class="section__subtitle reveal">
+          Explora o descarga los certificados en PDF de mi formación continua, talleres y conferencias asistidas.
+        </p>
+
+        <!-- Botones de Filtro -->
+        <div class="certs__filters reveal" role="tablist" aria-label="Filtrar certificados por categoría">
+          <button type="button" class="filter-btn active" data-filter="all">Todos</button>
+          <button type="button" class="filter-btn" data-filter="curso">Cursos</button>
+          <button type="button" class="filter-btn" data-filter="charla">Charlas y Workshops</button>
+        </div>
+
+        <!-- Grid de Certificados PDF -->
+        <div class="certs__grid" id="certs-grid">
+
+          <!-- Curso 1 -->
+          <article class="cert-card spotlight-card reveal" data-category="curso">
+            <div class="cert-card__badge-row">
+              <span class="cert-badge cert-badge--course">Curso</span>
+              <span class="cert-year">PDF</span>
+            </div>
+            <h3 class="cert-card__title">Exploración de redes con Cisco Packet Tracer</h3>
+            <p class="cert-card__issuer">UCSG / Cisco Networking Academy</p>
+            <p class="cert-card__desc">
+              Fundamentos de simulación de topologías de red y configuración de dispositivos.
+            </p>
+            <div class="cert-card__actions">
+              <button type="button" class="btn btn--sm btn--primary preview-pdf-btn" data-pdf="certificados/curso-1.pdf" data-title="Exploración de redes con Cisco Packet Tracer">
+                Ver PDF
+              </button>
+              <a href="certificados/curso-1.pdf" download class="btn btn--sm btn--outline">
+                Descargar
+              </a>
+            </div>
+          </article>
+
+          <!-- Curso 2 -->
+          <article class="cert-card spotlight-card reveal" data-category="curso">
+            <div class="cert-card__badge-row">
+              <span class="cert-badge cert-badge--course">Curso</span>
+              <span class="cert-year">PDF</span>
+            </div>
+            <h3 class="cert-card__title">Introducción a Ciberseguridad</h3>
+            <p class="cert-card__issuer">UCSG / Cisco Networking Academy</p>
+            <p class="cert-card__desc">
+              Conceptos básicos para la protección de redes, dispositivos y datos en el entorno digital.
+            </p>
+            <div class="cert-card__actions">
+              <button type="button" class="btn btn--sm btn--primary preview-pdf-btn" data-pdf="certificados/curso-2.pdf" data-title="Introducción a Ciberseguridad">
+                Ver PDF
+              </button>
+              <a href="certificados/curso-2.pdf" download class="btn btn--sm btn--outline">
+                Descargar
+              </a>
+            </div>
+          </article>
+
+          <!-- Curso 3 -->
+          <article class="cert-card spotlight-card reveal" data-category="curso">
+            <div class="cert-card__badge-row">
+              <span class="cert-badge cert-badge--course">Curso</span>
+              <span class="cert-year">PDF</span>
+            </div>
+            <h3 class="cert-card__title">Introducción al Internet de las Cosas y Transformación Digital</h3>
+            <p class="cert-card__issuer">UCSG / Cisco Networking Academy</p>
+            <p class="cert-card__desc">
+              Impacto de la interconexión de dispositivos y la digitalización de procesos empresariales.
+            </p>
+            <div class="cert-card__actions">
+              <button type="button" class="btn btn--sm btn--primary preview-pdf-btn" data-pdf="certificados/curso-3.pdf" data-title="Introducción al Internet de las Cosas">
+                Ver PDF
+              </button>
+              <a href="certificados/curso-3.pdf" download class="btn btn--sm btn--outline">
+                Descargar
+              </a>
+            </div>
+          </article>
+
+          <!-- Curso 4 -->
+          <article class="cert-card spotlight-card reveal" data-category="curso">
+            <div class="cert-card__badge-row">
+              <span class="cert-badge cert-badge--course">Curso</span>
+              <span class="cert-year">PDF</span>
+            </div>
+            <h3 class="cert-card__title">Introducción a la Ciencia de Datos</h3>
+            <p class="cert-card__issuer">UCSG / Cisco Networking Academy</p>
+            <p class="cert-card__desc">
+              Fundamentos de recolección, análisis e interpretación de datos para la toma de decisiones.
+            </p>
+            <div class="cert-card__actions">
+              <button type="button" class="btn btn--sm btn--primary preview-pdf-btn" data-pdf="certificados/curso-4.pdf" data-title="Introducción a la Ciencia de Datos">
+                Ver PDF
+              </button>
+              <a href="certificados/curso-4.pdf" download class="btn btn--sm btn--outline">
+                Descargar
+              </a>
+            </div>
+          </article>
+
+          <!-- Curso 5 -->
+          <article class="cert-card spotlight-card reveal" data-category="curso">
+            <div class="cert-card__badge-row">
+              <span class="cert-badge cert-badge--course">Curso</span>
+              <span class="cert-year">2026</span>
+            </div>
+            <h3 class="cert-card__title">Tasas de Interés</h3>
+            <p class="cert-card__issuer">Banco Central del Ecuador</p>
+            <p class="cert-card__desc">
+              Curso aprobado sobre conceptos y aplicaciones de tasas de interés, avalado por la Gerencia General.
+            </p>
+            <div class="cert-card__actions">
+              <button type="button" class="btn btn--sm btn--primary preview-pdf-btn" data-pdf="certificados/curso-5.pdf" data-title="Tasas de Interés">
+                Ver PDF
+              </button>
+              <a href="certificados/curso-5.pdf" download class="btn btn--sm btn--outline">
+                Descargar
+              </a>
+            </div>
+          </article>
+
+          <!-- Charla 1 -->
+          <article class="cert-card spotlight-card reveal" data-category="charla">
+            <div class="cert-card__badge-row">
+              <span class="cert-badge cert-badge--talk">Charla</span>
+              <span class="cert-year">2025</span>
+            </div>
+            <h3 class="cert-card__title">AWS - Generación de Infraestructura con Inteligencia Artificial Generativa</h3>
+            <p class="cert-card__issuer">Fomento a la Innovación</p>
+            <p class="cert-card__desc">
+              Aprendizaje e innovación en el desarrollo de aplicaciones basadas en IA generativa y servicios en la nube (2 horas).
+            </p>
+            <div class="cert-card__actions">
+              <button type="button" class="btn btn--sm btn--primary preview-pdf-btn" data-pdf="certificados/charla-1.pdf" data-title="AWS - Generación de Infraestructura con Inteligencia Artificial Generativa">
+                Ver PDF
+              </button>
+              <a href="certificados/charla-1.pdf" download class="btn btn--sm btn--outline">
+                Descargar
+              </a>
+            </div>
+          </article>
+
+          <!-- Charla 2 -->
+          <article class="cert-card spotlight-card reveal" data-category="charla">
+            <div class="cert-card__badge-row">
+              <span class="cert-badge cert-badge--talk">Workshop</span>
+              <span class="cert-year">2025</span>
+            </div>
+            <h3 class="cert-card__title">Crea tu primera aplicación con Gen AI en AWS</h3>
+            <p class="cert-card__issuer">Semana de la Internacionalización</p>
+            <p class="cert-card__desc">
+              Taller práctico orientado al desarrollo de aplicaciones con IA generativa y servicios de Amazon Web Services (4 horas).
+            </p>
+            <div class="cert-card__actions">
+              <button type="button" class="btn btn--sm btn--primary preview-pdf-btn" data-pdf="certificados/charla-2.pdf" data-title="Crea tu primera aplicación con Gen AI en AWS">
+                Ver PDF
+              </button>
+              <a href="certificados/charla-2.pdf" download class="btn btn--sm btn--outline">
+                Descargar
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contacto -->
+    <section class="contact section" id="contacto">
+      <div class="container">
+        <h2 class="section__title reveal">Contacto</h2>
+        <div class="contact__wrapper spotlight-card reveal">
+
+          <!-- Datos de Contacto Directo -->
+          <div class="contact__info">
+            <h3 class="contact__heading">Conectemos</h3>
+            <p class="contact__text">
+              ¿Tienes alguna propuesta académica, proyecto de desarrollo o colaboración tecnológica? Escríbeme directamente o revisa mis repositorios en GitHub.
+            </p>
+
+            <div class="contact__links">
+              <!-- GitHub -->
+              <a href="https://github.com/Mai-416" target="_blank" rel="noopener noreferrer" class="contact__link">
+                <span class="contact__link-icon">GitHub</span>
+                <span class="contact__link-text">github.com/Mai-416</span>
+              </a>
+
+              <!-- Correo + Botón Copiar -->
+              <div class="contact__email-box">
+                <a href="mailto:tifany.franco@cu.ucsg.edu.ec" class="contact__link contact__link--email">
+                  <span class="contact__link-icon">Email</span>
+                  <span class="contact__link-text" id="email-text">tifany.franco@cu.ucsg.edu.ec</span>
+                </a>
+                <button type="button" class="copy-btn" id="copy-email-btn" aria-label="Copiar correo institucional">
+                  Copiar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario Visual -->
+          <form class="contact__form" id="contact-form">
+            <div class="form__group">
+              <label for="name" class="form__label">Nombre</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Tu nombre completo" required />
+            </div>
+            <div class="form__group">
+              <label for="email" class="form__label">Correo electrónico</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="correo@ejemplo.com" required />
+            </div>
+            <div class="form__group">
+              <label for="message" class="form__label">Mensaje</label>
+              <textarea id="message" name="message" rows="4" class="form__input form__textarea" placeholder="Hola Maily, me gustaría conversar sobre..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Enviar Mensaje</button>
+            <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Interactivo para Vista Previa de PDFs -->
+  <div class="pdf-modal" id="pdf-modal" aria-hidden="true" role="dialog" aria-labelledby="pdf-modal-title">
+    <div class="pdf-modal__backdrop" id="pdf-modal-backdrop"></div>
+    <div class="pdf-modal__content">
+      <div class="pdf-modal__header">
+        <h3 class="pdf-modal__title" id="pdf-modal-title">Vista Previa del Certificado</h3>
+        <div class="pdf-modal__actions">
+          <a href="#" id="pdf-modal-download" download class="btn btn--sm btn--outline">Descargar PDF</a>
+          <button type="button" class="pdf-modal__close" id="pdf-modal-close" aria-label="Cerrar vista previa">&times;</button>
+        </div>
+      </div>
+      <div class="pdf-modal__body">
+        <iframe src="" id="pdf-iframe" class="pdf-modal__iframe" title="Visor de certificado PDF"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__content">
+      <p>&copy; 2026 Tifany Maily Franco Acurio — Ingeniería en Ciencias de la Computación, UCSG.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
